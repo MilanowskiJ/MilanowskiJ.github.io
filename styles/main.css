@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Source+Code+Pro&display=swap');
+
+:root{
+    --background-color: #1f1f23;
+    --background-highlight-color: #343238;
+    --background-shadow-color: #121213;
+    --scroll-color: #2e2c31;
+    --body-text-color: white;
+    --heading-text-color: #6ECC7C;
+    --subheading-text-color: #53A35F;
+    --link-text-color: #6ECC7C;
+    --link-hover-color: #53A35F;
+    --highlight-color: #FFB469;
+}
+
+h1, h2, h3{
+    text-align: center;
+    font-family: 'Source Code Pro', monospace;
+}
+
+h1{
+    color: var(--heading-text-color);
+}
+
+h2, h3{
+    color: var(--subheading-text-color);
+}
+
+h2 > a{
+    color: inherit;
+    text-decoration-color: var(--highlight-color);
+}
+
+body a{
+    color: var(--link-text-color);
+}
+
+body a:hover{
+    color: var(--link-hover-color);
+}
+
+p{
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 16pt;
+    line-height: 1.5;
+}
+
+body{
+    display: grid;
+    grid-template-areas: "head"
+                         "nav"
+                         "main"
+                         "foot";
+    grid-template-columns: 1r;
+    grid-template-rows: auto auto 1fr auto;
+    line-height: 1.5;
+    font-family: 'Lato', sans-serif;
+    background-color:var(--background-color);
+    color: var(--body-text-color);
+    background-image: url("https://www.transparenttextures.com/patterns/maze-black.png");
+}
+
+body > header{
+    grid-area: head;
+}
+
+body > main{
+    grid-area: main;
+    padding-top: 1em;
+}
+
+.portfolioImage {
+    max-width: 100%;
+    max-height: 12em;
+    filter: drop-shadow(0px 0px 10px var(--background-shadow-color));
+}
+
+body > nav{
+    grid-area: nav;
+    background-color: var(--background-highlight-color);
+    padding-right: 5%;
+    filter: drop-shadow(-5px 0px 10px var(--background-shadow-color));
+}
+
+body > footer{
+    grid-area: foot;
+    text-align: center;
+    line-height: 1.5;
+    padding-bottom: 1em;
+}
+
+body > * {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+body img{
+    max-width: 35%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body > nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+dt {
+    color: var(--subheading-text-color);
+    font-weight: 600;
+}
+
+body > nav ul li {
+    padding: 1rem;
+    display: inline;
+}
+
+ul#portfolioItems{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+ul#portfolioItems li{
+    flex-basis: 90%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+ul#portfolioItems li{
+    max-width: inherit;
+}
+
+@media screen and (min-width: 38em){
+    body{
+        display: grid;
+        grid-template-areas: "head nav"
+                             "main nav"
+                             "foot nav";
+        grid-template-columns: 5fr auto;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    ul#portfolioItems li{
+        flex-basis: 45%;
+        padding-right: 2.5%;
+        padding-left: 2.5%;
+    }
+
+    body > nav ul li {
+        display: block;
+    }
+
+    body > nav ul {
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 50em){
+    ul#portfolioItems li{
+        flex-basis: 31%;
+        padding-right: 1%;
+        padding-left: 1%;
+    }
+
+    dl {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-highlight-color);
+  }
+
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--background-color);
+}
